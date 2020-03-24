@@ -42,6 +42,8 @@ def main():
             #character nodes' frequencies combined.
             #The last two character nodes, now placed into a new node, are removed- the new node replaces the second
             #to last one, and the list is shortened by one. 
+
+            #This continues until the list is just one root node that contains everything.
              
             while len(charlist) != 1:
 
@@ -54,7 +56,7 @@ def main():
                 charlist.sort(key=lambda node: node.freq, reverse=True)
 
 
-            huffmantree = binary_search_tree(charlist[0]) #Make our loaded node an actual, defined tree.
+            huffmantree = binary_search_tree(charlist[0]) #Make our loaded root node an actual, defined tree.
 
             table = dict() #We'll store the new bit values from our tree in here for easy lookup.
 
