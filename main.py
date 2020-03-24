@@ -35,11 +35,14 @@ def main():
             #Sort based on nodes' freq
             charlist.sort(key=lambda node: node.freq, reverse=True)
 
-
-            #for i in range(0, len(charlist)):
-                #print(str(charlist[i].char) + " = " + str(charlist[i].freq))
             print("Constructing tree...")
 
+
+            #Here each of the last two character nodes of the list are put into a new node with a frequency of the two 
+            #character nodes' frequencies combined.
+            #The last two character nodes, now placed into a new node, are removed- the new node replaces the second
+            #to last one, and the list is shortened by one. 
+             
             while len(charlist) != 1:
 
                 totalFreq = charlist[-1].freq + charlist[-2].freq
